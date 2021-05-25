@@ -1,0 +1,29 @@
+.carouselWrapper {
+    width: 100%;
+    position: relative;
+
+    .carouselBackButton, .carouselNextButton {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        
+        margin: 0 1rem;
+        border: 0;
+        border-radius: 7px;
+
+        font-size: 2rem;
+        color: var(--white);
+
+        background-color: var(--gray-200);
+    }
+    .carouselBackButton {
+        left: 0;
+    }
+    .carouselNextButton {
+        right: 0;
+    }
+}
