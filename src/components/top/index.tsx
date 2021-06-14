@@ -3,7 +3,11 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 import styles from "./style.module.scss";
 
-function Top(props) {
+interface TopProps {
+    categories: string[];
+}
+
+function Top(props:TopProps) {
     const [countShopping, setCountShopping] = useState(0)
 
     const categories = props.categories
