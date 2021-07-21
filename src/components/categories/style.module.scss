@@ -1,0 +1,18 @@
+.categoriesWrapper {
+    display: flex;
+    width: 100vw;
+    flex: 1;
+    background-color: var(--gray-500);
+
+    .categoriesTitle {
+        padding: 1.2rem 0.65rem;
+        color: var(--gray-50);
+    }
+
+    .categoriestest {
+        display: flex;
+        width: 100vw;
+        flex: 1;
+        background-color: var(--gray-500);
+    }
+}

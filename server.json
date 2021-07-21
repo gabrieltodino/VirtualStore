@@ -1,53 +1,50 @@
 {
-    "categories": [
-        "Category01",
-        "Category02",
-        "Category03",
-        "Category04",
-        "Category05",
-        "Category06"
-    ],
     "products": [
         {
             "name": "product 01",
-            "id": "01",
+           
             "category": "Category01",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim, id tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim,  tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
             "price": 20.99
         },
         {
             "name": "product 02",
+            "label": "product02",
             "id": "02",
             "category": "Category02",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim, id tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim,  tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
             "price": 20.99
         },
         {
             "name": "product 03",
+            "label": "product03",
             "category": "Category03",
             "id": "03",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim, id tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim,  tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
             "price": 20.99
         },
         {
             "name": "product 04",
+            "label": "product04",
             "id": "04",
             "category": "Category04",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim, id tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim,  tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
             "price": 20.99
         },
         {
             "name": "product 05",
+            "label": "product05",
             "id": "05",
             "category": "Category05",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim, id tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim,  tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
             "price": 20.99
         },
         {
             "name": "product 06",
+            "label": "product06",
             "id": "06",
             "category": "Category06",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim, id tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat, eros eu fermentum cursus, ipsum nibh pharetra enim,  tempor magna dui in neque. Morbi nec magna posuere, consectetur felis quis, molestie enim. Donec in neque elit. Morbi in est at purus dignissim vehicula sit amet in diam. Suspendisse turpis felis, varius eu convallis nec, euismod eget eros. Morbi aliquet risus at imperdiet maximus. Maecenas nec libero a ante elementum dapibus. Vivamus sed mauris nec nunc pharetra hendrerit. Proin volutpat erat justo, sed tristique velit lacinia et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vitae porta eros.",
             "price": 20.99
         }
     ]

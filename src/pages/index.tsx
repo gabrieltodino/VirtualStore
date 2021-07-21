@@ -3,16 +3,19 @@ import ImageCarousel from "../components/slider";
 import Top from "../components/top";
 import Categories from "../components/categories";
 
-import { api } from "../services/api";
+import { firestore } from "../services/firebase";
 
 import styles from "./home.module.scss";
 
 interface ProductTypes {
+  id: string;
+  data:{
     name: String;
-    id: String;
     category: String;
-    description: String;
-    price: Number
+    desc: String;
+    img: string;
+    price: Number;
+  }
 }
 
 interface MainProps {
@@ -23,21 +26,44 @@ interface MainProps {
 export default function Home(props: MainProps) {
   return (
     <div className={styles.main}>
-      <Top categories={props.categories}/>
+      <Top categories={props.categories} />
       <ImageCarousel />
-      <Categories categories={props.categories} products={props.products}/>
+      <Categories categories={props.categories} products={props.products}/> 
     </div>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categories = await api.get("categories", {});
-  const products = await api.get("products", {});
+  const categories = [];
+  await (async () => {
+    await firestore
+      .collection("categories")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          categories.push(doc.data().title);
+        });
+      });
+  })();
 
+  const products = [];
+  await (async () => {
+    await firestore
+      .collection("products")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          products.push({
+            id: doc.id,
+            data: doc.data(),
+          });
+        });
+      });
+  })();
   return {
     props: {
-      categories: categories.data,
-      products: products.data,
+      categories: categories,
+      products: products,
     },
   };
 };
