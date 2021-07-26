@@ -13,6 +13,8 @@
   --gray-500: #808080;
   --gray-800: #494d4b;
 
+  --green: #7a8c3a;
+
   overflow-x: hidden;
 }
 
@@ -57,3 +59,10 @@ h2 {
 button {
   cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+  color: var(--gray-500);
+}
+
+

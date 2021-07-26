@@ -1,17 +1,15 @@
 import styles from "./style.module.scss";
-
-import Image from "next/image";
-import Link from "next/link";
+import CategoriesTest from '../categoriesSlider/index'
 
 interface ProductTypes {
   id: string;
-  data:{
-    name: String;
-    category: String;
-    desc: String;
+  data: {
+    name: string;
+    category: string;
+    desc: string;
     img: string;
     price: Number;
-  }
+  };
 }
 
 interface CategoriesProps {
@@ -27,32 +25,11 @@ function Categories(props: CategoriesProps) {
     <div>
       {categories.map((dataCat) => {
         return (
-          <div key={dataCat}>
-            <div className={styles.categoriesWrapper}>
-              <h3 className={styles.categoriesTitle}>{dataCat}:</h3>
+          <div key={dataCat} className={styles.categoriesWrapper}>
+            <div className={styles.categoriesTitleWrapper}>
+              <h2>{dataCat}:</h2>
             </div>
-
-            {products.map((dataProd) => {
-              if (dataCat == dataProd.data.category) {
-                return (
-                  <div key={dataProd.id} className={styles.categoriestest}>
-                    <Image
-                      width={200}
-                      height={200}
-                      src={dataProd.data.img}
-                      alt="product card image"
-                      objectFit="fill"
-                    />
-                    <p>{dataProd.data.name}</p>
-                    <p>{dataProd.data.price}</p>
-                    <div>
-                      <Link href={`/products/${dataProd.id}`}>Buy Now</Link>
-                      <p>Add to Cart</p>
-                    </div>
-                  </div>
-                );
-              }
-            })}
+            <CategoriesTest categorie={dataCat} productsTotal={products} />
           </div>
         );
       })}
