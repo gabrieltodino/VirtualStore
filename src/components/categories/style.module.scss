@@ -24,50 +24,83 @@
 
 .categoriesbox {
     max-width: 205px;
+    min-width: 205px;
     max-height: 330px;
-    min-height: 320px;
+    min-height: 315px;
     margin: 3px;
-    padding: 5px;
+    
     border: 1px solid black;
 
-    .categoriesBoxBottom {
+    .textWrapper {
+        padding: 5px;
+        .categoriesBoxBottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 10px;
+
+            a {
+                background-color: var(--green);
+                color: var(--white);
+                font-size: 1rem;
+                padding: 7px;
+                border-radius: 3px;
+                transition: 0.7s;
+            }
+
+            a:hover {
+                filter: brightness(0.8);
+            }
+
+            p {
+                cursor: pointer;
+                transition: 0.7s;
+            }
+
+            p:hover {
+                color: var(--gray-800);
+                text-decoration: underline;
+            }
+
+        }
+
+        &>h2 {
+            font-size: 1.2rem;
+        }
+
+        &>p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.carouselWrapper {
+    width: 100%;
+    position: relative;
+
+    .carouselBackButton, .carouselNextButton {
+        width: 2rem;
+        height: 3rem;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-top: 10px;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        
+        border: 0;
+        border-radius: 7px;
 
-        a {
-            background-color: var(--green);
-            color: var(--white);
-            font-size: 1rem;
-            padding: 7px;
-            border-radius: 3px;
-            transition: 0.7s;
-        }
+        font-size: 2rem;
+        color: var(--white);
 
-        a:hover {
-            filter: brightness(0.8);
-        }
-
-        p {
-            cursor: pointer;
-            transition: 0.7s;
-        }
-
-        p:hover {
-            color: var(--gray-800);
-            text-decoration: underline;
-        }
-
+        background-color: rgba(175, 178, 177, 0.6);
     }
-
-    &>h2 {
-        font-size: 1.2rem;
+    .carouselBackButton {
+        left: 0;
     }
-
-    &>p {
-        font-size: 1.1rem;
+    .carouselNextButton {
+        right: 13.5px;
     }
 }

@@ -10,9 +10,9 @@ import styles from "./home.module.scss";
 interface ProductTypes {
   id: string;
   data:{
-    name: String;
-    category: String;
-    desc: String;
+    name: string;
+    category: string;
+    desc: string;
     img: string;
     price: Number;
   }

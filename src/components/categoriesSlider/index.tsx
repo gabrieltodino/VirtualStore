@@ -8,7 +8,6 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
-  ImageWithZoom,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
@@ -48,9 +47,9 @@ const CategoriesCarousel = (props: CategoriesProps) => {
       step={1}
       naturalSlideWidth={400}
       naturalSlideHeight={100}
+      className={styles.carouselWrapper}
     >
       <Slider className={styles.slider}>
-      
         {elementsWithCategorie.map((product) => {
           index++;
           return (
@@ -66,14 +65,15 @@ const CategoriesCarousel = (props: CategoriesProps) => {
                 alt="product card image"
                 objectFit="fill"
               />
-              <h2>{product.data.name}</h2>
-              <p>R$ {product.data.price}</p>
-              <div className={styles.categoriesBoxBottom}>
-                <Link href={`/products/${product.id}`}>Buy Now</Link>
-                <p>Add to Cart</p>
+              <div className={styles.textWrapper}>
+                <h2>{product.data.name}</h2>
+                <p>R$ {product.data.price}</p>
+                <div className={styles.categoriesBoxBottom}>
+                  <Link href={`/products/${product.id}`}>Buy Now</Link>
+                  <p>Add to Cart</p>
+                </div>
               </div>
             </Slide>
-            
           );
         })}
       </Slider>
