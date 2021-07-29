@@ -26,7 +26,7 @@ interface MainProps {
 export default function Home(props: MainProps) {
   return (
     <div className={styles.main}>
-      <Top categories={props.categories} />
+      <Top />
       <ImageCarousel />
       <Categories categories={props.categories} products={props.products}/> 
     </div>

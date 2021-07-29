@@ -1,6 +1,14 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+import { useState } from "react";
+
+import Top from "../../components/top";
 
 import { firestore } from "../../services/firebase";
+
+import style from "./product.module.scss";
 
 interface ProductTypes {
   id: string;
@@ -18,8 +26,52 @@ interface PropsType {
 }
 
 export default function ProductPage({ products }: PropsType) {
-  
-  return (<div><p>{products.data.name}</p></div>);
+  const [dataReceived, setDataReceived] = useState({})
+
+  const txt = encodeURIComponent("teste todino atenção") 
+
+  function handleDataReceived(data) {
+    setDataReceived(data)
+  }
+
+  useEffect(() => {
+    handleDataReceived(products)
+    console.log("aqui")
+  },[])
+
+  return (
+    <div>
+      {dataReceived !== {} &&
+        <>
+          <Top />
+          <div className={style.dataWrapper}>
+            <Image
+              width={640}
+              height={670}
+              src={products.data.img}
+              objectFit="cover"
+              className={style.image}
+            />
+            <div className={style.data}>
+              <h1>{products.data.name}</h1>
+              <h2>R$ {products.data.price}</h2>
+              <div>
+                <h3>Description:</h3>
+                <p>{products.data.desc}</p>
+              </div>
+              <div className={style.link}>
+                <Link
+                  href={
+                    `https://api.whatsapp.com/send?phone=5514996976598&text=${txt}`
+                  }
+                >Testando</Link>
+              </div>
+            </div>
+          </div>
+        </>
+      }
+    </div>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -32,20 +84,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
 
-  
-  //const docRef = ;
+  let product
 
-  let product = {};
+  async  function test() {
+    await firestore
+      .collection("products")
+      // @ts-ignore
+      .doc(slug)
+      .get()
+      .then((doc) => {
+        product = {
+          id: doc.id,
+          data: doc.data(),
+        };
+      });
+  }
 
-  await(async () => {
-    // @ts-ignore:
-    await firestore.collection("products").doc(slug).get().then((doc) => {
-      product = {
-        id: doc.id,
-        data: doc.data(),
-      };
-    });
-  })();
+  await test()
+
+  console.log(product)
 
   return {
     props: {

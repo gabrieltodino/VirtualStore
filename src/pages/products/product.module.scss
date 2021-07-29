@@ -1,0 +1,29 @@
+.dataWrapper {
+    display: flex;
+    flex: 1;
+    max-width: 80rem;
+    margin: 0 auto;
+
+    .image {
+        max-width: 50%;
+    }
+
+    .data {
+        width: 50%;
+        padding: 2rem;
+
+        h2 {
+            margin: 1rem 0;
+        }
+
+        div {
+            padding: 1rem;
+            border: 1px solid black;
+            border-radius: 5px;
+            p {
+                margin-top: 10px;
+                text-align: justify;
+            }
+        }
+    }
+}
