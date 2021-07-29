@@ -17,11 +17,6 @@
 
 }
 
-
-.slider {
-    max-width: 99.4%;
-}
-
 .categoriesbox {
     max-width: 205px;
     min-width: 205px;
@@ -102,5 +97,21 @@
     }
     .carouselNextButton {
         right: 13.5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .categoriesbox{
+        max-width: 160px;
+        min-width: 160px;
+        max-height: 310px;
+        min-height: 280px;
+
+        .categoriesBoxBottom {
+
+            a {
+                padding: 0px;
+            }
+        }
     }
 }

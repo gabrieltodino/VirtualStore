@@ -25,8 +25,7 @@ const ImageCarousel = () => (
     <Slider className={styles.carouselSlider}>
       <Slide index={0}>
         <Image
-          width={1920}
-          height={670}
+          layout="fill"
           src={"/image01.jpg"}
           objectFit="cover"
         />

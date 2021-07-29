@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import { FaWhatsapp } from "react-icons/fa";
+
 import Top from "../../components/top";
 
 import { firestore } from "../../services/firebase";
@@ -59,13 +61,14 @@ export default function ProductPage({ products }: PropsType) {
                 <h3>Description:</h3>
                 <p>{products.data.desc}</p>
               </div>
-              <div className={style.link}>
-                <Link
+              
+                <a
                   href={
                     `https://api.whatsapp.com/send?phone=5514996976598&text=${txt}`
                   }
-                >Testando</Link>
-              </div>
+                  target="_blank"
+                ><p className={style.link}>Compre agora! <FaWhatsapp /></p></a>
+              
             </div>
           </div>
         </>
@@ -101,8 +104,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 
   await test()
-
-  console.log(product)
 
   return {
     props: {

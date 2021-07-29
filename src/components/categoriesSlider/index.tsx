@@ -14,6 +14,8 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import styles from "../categories/style.module.scss";
+import { useEffect } from "react";
+import { useState } from "react";
 
 interface ProductTypes {
   id: string;
@@ -34,24 +36,32 @@ interface CategoriesProps {
 const CategoriesCarousel = (props: CategoriesProps) => {
   const categorie = props.categorie;
   const productsTotal = props.productsTotal;
+  const [slidesCount, setSlidesCount] = useState(9)
 
-  let index = -1;
+  let index = 0;
 
   const elementsWithCategorie = productsTotal.filter(
     (product) => product.data.category === categorie
   );
+
+  useEffect(() => {
+    setSlidesCount(Math.floor(window.innerWidth / 205))
+  })
+  
   return (
     <CarouselProvider
-      totalSlides={elementsWithCategorie.length}
-      visibleSlides={9}
+      totalSlides={elementsWithCategorie.length + 1}
+      visibleSlides={slidesCount}
       step={1}
       naturalSlideWidth={400}
       naturalSlideHeight={100}
       className={styles.carouselWrapper}
+      infinite
     >
       <Slider className={styles.slider}>
         {elementsWithCategorie.map((product) => {
           index++;
+
           return (
             <Slide
               index={index}
