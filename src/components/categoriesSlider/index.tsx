@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,6 +16,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "../categories/style.module.scss";
 import { useEffect } from "react";
 import { useState } from "react";
+import { ShoppingCartContext } from "../../contexts/ShoppingCarContext";
 
 interface ProductTypes {
   id: string;
@@ -36,7 +37,9 @@ interface CategoriesProps {
 const CategoriesCarousel = (props: CategoriesProps) => {
   const categorie = props.categorie;
   const productsTotal = props.productsTotal;
-  const [slidesCount, setSlidesCount] = useState(9)
+  const [slidesCount, setSlidesCount] = useState(9);
+
+  const { HandleAddToShoppingCart, shoppingCart } = useContext(ShoppingCartContext);
 
   let index = 0;
 
@@ -45,9 +48,9 @@ const CategoriesCarousel = (props: CategoriesProps) => {
   );
 
   useEffect(() => {
-    setSlidesCount(Math.floor(window.innerWidth / 205))
-  })
-  
+    setSlidesCount(Math.floor(window.innerWidth / 205));
+  });
+
   return (
     <CarouselProvider
       totalSlides={elementsWithCategorie.length + 1}
@@ -80,7 +83,13 @@ const CategoriesCarousel = (props: CategoriesProps) => {
                 <p>R$ {product.data.price}</p>
                 <div className={styles.categoriesBoxBottom}>
                   <Link href={`/products/${product.id}`}>Buy Now</Link>
-                  <p>Add to Cart</p>
+                  <p
+                    onClick={() => {
+                      HandleAddToShoppingCart(product.data.name);
+                    }}
+                  >
+                    Add to Cart
+                  </p>
                 </div>
               </div>
             </Slide>

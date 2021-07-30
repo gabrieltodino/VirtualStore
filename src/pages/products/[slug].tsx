@@ -29,16 +29,14 @@ interface PropsType {
 
 export default function ProductPage({ products }: PropsType) {
   const [dataReceived, setDataReceived] = useState({})
-
-  const txt = encodeURIComponent("teste todino atenção") 
-
+  const [textMessage, setTextMessage] = useState("")
   function handleDataReceived(data) {
     setDataReceived(data)
   }
 
   useEffect(() => {
     handleDataReceived(products)
-    console.log("aqui")
+    setTextMessage(encodeURIComponent(`Hello, how are you? I'd like to buy the following product: ${products.data.name}`) )
   },[])
 
   return (
@@ -56,7 +54,7 @@ export default function ProductPage({ products }: PropsType) {
             />
             <div className={style.data}>
               <h1>{products.data.name}</h1>
-              <h2>R$ {products.data.price}</h2>
+              <h2>US$ {products.data.price}</h2>
               <div>
                 <h3>Description:</h3>
                 <p>{products.data.desc}</p>
@@ -64,10 +62,10 @@ export default function ProductPage({ products }: PropsType) {
               
                 <a
                   href={
-                    `https://api.whatsapp.com/send?phone=5514996976598&text=${txt}`
+                    `https://api.whatsapp.com/send?phone=5514996976598&text=${textMessage}`
                   }
                   target="_blank"
-                ><p className={style.link}>Compre agora! <FaWhatsapp /></p></a>
+                ><p className={style.link}>Buy now! <FaWhatsapp /></p></a>
               
             </div>
           </div>

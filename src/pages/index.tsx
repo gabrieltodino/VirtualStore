@@ -24,6 +24,7 @@ interface MainProps {
 }
 
 export default function Home(props: MainProps) {
+
   return (
     <div className={styles.main}>
       <Top />
