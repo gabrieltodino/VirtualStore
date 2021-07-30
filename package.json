@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "server": "json-server server.json -w -d 750 -p 3333"
+    "start": "next start"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -16,6 +15,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-modal": "^3.14.3",
     "react-slick": "^0.28.1",
     "sass": "^1.32.11"
   },
