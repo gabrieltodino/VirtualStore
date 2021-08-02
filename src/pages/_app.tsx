@@ -1,13 +1,16 @@
-import '../styles/global.scss'
+import "../styles/global.scss";
 
-import { ShoppingCartProvider } from '../contexts/ShoppingCarContext'
+import { ShoppingCartProvider } from "../contexts/ShoppingCarContext";
+import { CookiesProvider } from "react-cookie";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ShoppingCartProvider>
-      <Component {...pageProps} />
-    </ShoppingCartProvider>
-  )
+    <CookiesProvider>
+      <ShoppingCartProvider>
+        <Component {...pageProps} />
+      </ShoppingCartProvider>
+    </CookiesProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

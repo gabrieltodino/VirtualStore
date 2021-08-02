@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
+import { useCookies } from 'react-cookie';
 
 type ShoppingCartContextProps = {
   shoppingCart: string[];
@@ -14,10 +15,17 @@ export const ShoppingCartContext = createContext(
 );
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  const [shoppingCart, addToShoppigCart] = useState([]);
+  const [cookies, setCookie] = useCookies(['ShoppingCart']);
+  const [shoppingCart, addToShoppigCart] = useState(cookies.ShoppingCart ? cookies.ShoppingCart : []);
+
+  let arrayItems = shoppingCart
 
   function HandleAddToShoppingCart(Item: string) {
     addToShoppigCart([...shoppingCart, Item]);
+
+    arrayItems.push(Item)
+
+    setCookie('ShoppingCart', arrayItems, { path: '/' });
   }
   return (
     <ShoppingCartContext.Provider

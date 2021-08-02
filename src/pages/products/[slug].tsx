@@ -1,12 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 
 import { FaWhatsapp } from "react-icons/fa";
 
 import Top from "../../components/top";
+import { ShoppingCartContext } from "../../contexts/ShoppingCarContext";
 
 import { firestore } from "../../services/firebase";
 
@@ -28,20 +29,27 @@ interface PropsType {
 }
 
 export default function ProductPage({ products }: PropsType) {
-  const [dataReceived, setDataReceived] = useState({})
-  const [textMessage, setTextMessage] = useState("")
+  const [dataReceived, setDataReceived] = useState({});
+  const [textMessage, setTextMessage] = useState("");
+  const { HandleAddToShoppingCart, shoppingCart } =
+    useContext(ShoppingCartContext);
+
   function handleDataReceived(data) {
-    setDataReceived(data)
+    setDataReceived(data);
   }
 
   useEffect(() => {
-    handleDataReceived(products)
-    setTextMessage(encodeURIComponent(`Hello, how are you? I'd like to buy the following product: ${products.data.name}`) )
-  },[])
+    handleDataReceived(products);
+    setTextMessage(
+      encodeURIComponent(
+        `Hello, how are you? I'd like to buy the following product: ${products.data.name}`
+      )
+    );
+  }, []);
 
   return (
     <div>
-      {dataReceived !== {} &&
+      {dataReceived !== {} && (
         <>
           <Top />
           <div className={style.dataWrapper}>
@@ -59,18 +67,30 @@ export default function ProductPage({ products }: PropsType) {
                 <h3>Description:</h3>
                 <p>{products.data.desc}</p>
               </div>
-              
+
+              <div className={style.bottom}>
                 <a
-                  href={
-                    `https://api.whatsapp.com/send?phone=5514996976598&text=${textMessage}`
-                  }
+                  href={`https://api.whatsapp.com/send?phone=5514996976598&text=${textMessage}`}
                   target="_blank"
-                ><p className={style.link}>Buy now! <FaWhatsapp /></p></a>
-              
+                  className={style.linkWrapper}
+                >
+                  <p className={style.link}>
+                    Buy now! <FaWhatsapp />
+                  </p>
+                </a>
+
+                <p
+                  onClick={() => {
+                    HandleAddToShoppingCart(products.data.name);
+                  }}
+                >
+                  Add to Cart
+                </p>
+              </div>
             </div>
           </div>
         </>
-      }
+      )}
     </div>
   );
 }
@@ -85,9 +105,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params;
 
-  let product
+  let product;
 
-  async  function test() {
+  async function test() {
     await firestore
       .collection("products")
       // @ts-ignore
@@ -101,7 +121,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       });
   }
 
-  await test()
+  await test();
 
   return {
     props: {

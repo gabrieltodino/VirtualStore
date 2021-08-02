@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import Link from "next/link";
 import styles from "./style.module.scss";
 
 import { FaShoppingCart, FaWhatsapp } from "react-icons/fa";
@@ -24,6 +25,7 @@ function Top() {
   const { shoppingCart } = useContext(ShoppingCartContext);
 
   let subtitle, bottomDiv, link, closeButton;
+  let itemKey = 0
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -80,7 +82,9 @@ function Top() {
   return (
     <div className={styles.main}>
       <div className={styles.mainLimiter}>
-        <h3>LogoMarca</h3>
+        <Link href="/">
+          <h3>LogoMarca</h3>
+        </Link>
         <div className={styles.shoppingCar} onClick={openModal}>
           <FaShoppingCart />
           <p>{shoppingCart.length}</p>
@@ -97,7 +101,7 @@ function Top() {
           </h2>
           <div>
             {shoppingCart.map((item) => {
-              return <h3>{">" + item}</h3>;
+              return <h3 key={++itemKey}>{">" + item}</h3>;
             })}
           </div>
           <div ref={(_bottomDiv) => (bottomDiv = _bottomDiv)}>
